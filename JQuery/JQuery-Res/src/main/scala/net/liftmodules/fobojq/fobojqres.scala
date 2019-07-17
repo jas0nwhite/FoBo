@@ -43,6 +43,42 @@ package object fobojqres {
     override def toString() = "fobojqres.Resource = " + store.toString()
 
     /**
+      * Enable usage of FoBo's JQuery resources version 3&#8228;4&#8228;1 in your bootstrap liftweb Boot.
+      * @version 3.4.1
+      *
+      * @example
+      *
+      * {{{
+      *   import net.liftmodules.{fobojqres => fobo}
+      *    :
+      *   FoBo.Resource.init=FoBo.Resource.JQuery341
+      * }}}
+      * @since v2.12
+      */
+    case object JQuery341 extends Resource {
+      FoBoResources.init
+      FoBoResources.jquery341
+    }
+
+    /**
+      * Enable usage of FoBo's JQuery resources version 3&#8228;3&#8228;1 in your bootstrap liftweb Boot.
+      * @version 3.3.1
+      *
+      * @example
+      *
+      * {{{
+      *   import net.liftmodules.{fobojqres => fobo}
+      *    :
+      *   FoBo.Resource.init=FoBo.Resource.JQuery331
+      * }}}
+      * @since v2.12
+      */
+    case object JQuery331 extends Resource {
+      FoBoResources.init
+      FoBoResources.jquery331
+    }
+
+    /**
       * Enable usage of FoBo's JQuery resources version 3&#8228;0&#8228;0 in your bootstrap liftweb Boot.
       * @version 3.0.0
       *
@@ -278,6 +314,26 @@ package object fobojqres {
     lazy val init: Unit = {
       ResourceServer.allow {
         case "fobo" :: tail => true
+      }
+    }
+
+    lazy val jquery341 = {
+      ResourceServer
+      .rewrite { //fetched from the jquery module ("adding" fobo to the modules path)
+        case "fobo" :: "jquery.js" :: Nil if Props.devMode =>
+          List("jquery", "3.4.1", "js", "jquery.js")
+        case "fobo" :: "jquery.js" :: Nil =>
+          List("jquery", "3.4.1", "js", "jquery-min.js")
+      }
+    }
+
+    lazy val jquery331 = {
+      ResourceServer
+      .rewrite { //fetched from the jquery module ("adding" fobo to the modules path)
+        case "fobo" :: "jquery.js" :: Nil if Props.devMode =>
+          List("jquery", "3.3.1", "js", "jquery.js")
+        case "fobo" :: "jquery.js" :: Nil =>
+          List("jquery", "3.3.1", "js", "jquery-min.js")
       }
     }
 

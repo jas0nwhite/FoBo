@@ -74,9 +74,47 @@ package object fobojq {
     override def toString() = "fobojq.Toolkit = " + store.toString()
 
     /**
+      * Enable usage of FoBo's JQuery API and resources version 3&#8228;4&#8228;1 in your bootstrap liftweb Boot.
+      * @version 3.4.1
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
+      *
+      * @example
+      *
+      * {{{
+      *   import net.liftmodules.{fobojq => fobo}
+      *    :
+      *   fobo.Toolkit.init=fobo.Toolkit.JQuery341
+      * }}}
+      * @since v2.12
+      */
+    case object JQuery341 extends Toolkit {
+      fobojqres.Resource.JQuery341
+      //fobojqapi.API.JQuery2
+    }
+
+    /**
+      * Enable usage of FoBo's JQuery API and resources version 3&#8228;3&#8228;1 in your bootstrap liftweb Boot.
+      * @version 3.3.1
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
+      *
+      * @example
+      *
+      * {{{
+      *   import net.liftmodules.{fobojq => fobo}
+      *    :
+      *   fobo.Toolkit.init=fobo.Toolkit.JQuery331
+      * }}}
+      * @since v2.12
+      */
+    case object JQuery331 extends Toolkit {
+      fobojqres.Resource.JQuery331
+      //fobojqapi.API.JQuery2
+    }
+
+    /**
       * Enable usage of FoBo's JQuery API and resources version 3&#8228;1&#8228;0 in your bootstrap liftweb Boot.
       * @version 3.1.0
-      * OBS! JQuery 3.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -113,7 +151,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery API and resources version 3&#8228;0&#8228;0 in your bootstrap liftweb Boot.
       * @version 3.0.0
-      * OBS! JQuery 3.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -132,7 +170,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery API and resources version 2&#8228;2&#8228;4 in your bootstrap liftweb Boot.
       * @version 2.2.4
-      * OBS! JQuery 2.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 2.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -186,7 +224,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery API and resources version 2&#8228;1&#8228;4 in your bootstrap liftweb Boot.
       * @version 2.1.4
-      * OBS! JQuery 2.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 2.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -204,7 +242,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery API and resources version 2&#8228;1&#8228;1 in your bootstrap liftweb Boot.
       * @version 2.1.1
-      * OBS! JQuery 2.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 2.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -322,9 +360,43 @@ package object fobojq {
     override def toString() = "fobojq.Resource = " + store.toString()
 
     /**
+      * Enable usage of FoBo's JQuery resources version 3&#8228;4&#8228;1 in your bootstrap liftweb Boot.
+      * @version 3.4.1
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
+      *
+      * @example
+      *
+      * {{{
+      *   import net.liftmodules.{fobojq => fobo}
+      *    :
+      *   fobo.Resource.init=fobo.Resource.JQuery341
+      * }}}
+      */
+    case object JQuery341 extends Resource {
+      fobojqres.Resource.JQuery341
+    }
+
+    /**
+      * Enable usage of FoBo's JQuery resources version 3&#8228;3&#8228;1 in your bootstrap liftweb Boot.
+      * @version 3.3.1
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
+      *
+      * @example
+      *
+      * {{{
+      *   import net.liftmodules.{fobojq => fobo}
+      *    :
+      *   fobo.Resource.init=fobo.Resource.JQuery331
+      * }}}
+      */
+    case object JQuery331 extends Resource {
+      fobojqres.Resource.JQuery331
+    }
+
+    /**
       * Enable usage of FoBo's JQuery resources version 3&#8228;1&#8228;0 in your bootstrap liftweb Boot.
       * @version 3.1.0
-      * OBS! JQuery 3.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -357,7 +429,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery resources version 3&#8228;0&#8228;0 in your bootstrap liftweb Boot.
       * @version 3.0.0
-      * OBS! JQuery 3.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 3.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -374,7 +446,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery resources version 2&#8228;2&#8228;4 in your bootstrap liftweb Boot.
       * @version 2.2.4
-      * OBS! JQuery 2.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 2.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -423,7 +495,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery resources version 2&#8228;1&#8228;4 in your bootstrap liftweb Boot.
       * @version 2.1.4
-      * OBS! JQuery 2.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 2.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *
@@ -440,7 +512,7 @@ package object fobojq {
     /**
       * Enable usage of FoBo's JQuery resources version 2&#8228;1&#8228;1 in your bootstrap liftweb Boot.
       * @version 2.1.1
-      * OBS! JQuery 2.x dose not support Internet Explorer 6, 7, or 8.
+      * OBS! JQuery 2.x does not support Internet Explorer 6, 7, or 8.
       *
       * @example
       *

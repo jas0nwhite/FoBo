@@ -8,6 +8,30 @@ object FoBoJQResSpec extends Specification {
 
   sequential
 
+  //JQuery341
+  "With FoBoJQRes.Resource.init set to FoBoJQRes.Resource.JQuery341 the ResourceServer" should {
+    "allow  fobo/jquery.js" in {
+      allowResource(fobojqres.Resource.JQuery341, "fobo" :: "jquery.js" :: Nil) must_== true
+    }
+    "rewrit fobo/jquery.js to jquery/3.4.1/js/jquery-min.js" in {
+      rewriteResource(fobojqres.Resource.JQuery341,
+        "fobo" :: "jquery.js" :: Nil) must_==
+      List("jquery", "3.4.1", "js", "jquery-min.js")
+    }
+  }
+
+  //JQuery331
+  "With FoBoJQRes.Resource.init set to FoBoJQRes.Resource.JQuery331 the ResourceServer" should {
+    "allow  fobo/jquery.js" in {
+      allowResource(fobojqres.Resource.JQuery331, "fobo" :: "jquery.js" :: Nil) must_== true
+    }
+    "rewrit fobo/jquery.js to jquery/3.3.1/js/jquery-min.js" in {
+      rewriteResource(fobojqres.Resource.JQuery331,
+        "fobo" :: "jquery.js" :: Nil) must_==
+      List("jquery", "3.3.1", "js", "jquery-min.js")
+    }
+  }
+  
   //JQuery310
   "With FoBoJQRes.Resource.init set to FoBoJQRes.Resource.JQuery310 the ResourceServer" should {
     "allow  fobo/jquery.js" in {
